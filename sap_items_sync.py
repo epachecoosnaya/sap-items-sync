@@ -29,7 +29,8 @@ SAP_COMPANY_DB = os.environ["SAP_COMPANY_DB"]
 SAP_USER       = os.environ["SAP_USER"]
 SAP_PASSWORD   = os.environ["SAP_PASSWORD"]
 
-SUPABASE_URL   = os.environ["SUPABASE_URL"]
+SUPABASE_URL   = os.environ.get("SUPABASE_URL", "")
+log.info(f"SUPABASE_URL recibida: '{SUPABASE_URL[:20] if SUPABASE_URL else 'VACIA'}'")
 SUPABASE_KEY   = os.environ["SUPABASE_KEY"]
 
 PAGE_SIZE  = 20
